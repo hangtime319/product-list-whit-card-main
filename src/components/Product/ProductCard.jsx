@@ -1,10 +1,11 @@
 import React from "react";
 import AddToCartToggle from "./AddToCartToggle";
+import { getImageUrl } from "../../utils/imageAssets";
 
 const ProductCard = ({ product, cartItems, handleAddToCart, handleIncrement, handleDecrement }) => {
-  const desktopUrl = new URL(product.image.desktop, import.meta.url).href;
-  const tabletUrl = new URL(product.image.tablet, import.meta.url).href;
-  const mobileUrl = new URL(product.image.mobile, import.meta.url).href;
+  const desktopUrl = getImageUrl(product.image.desktop);
+  const tabletUrl = getImageUrl(product.image.tablet);
+  const mobileUrl = getImageUrl(product.image.mobile);
 
   const isProductInCart = cartItems.some((item) => item.name === product.name);
 

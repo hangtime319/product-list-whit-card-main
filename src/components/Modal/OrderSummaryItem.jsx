@@ -1,8 +1,9 @@
 import React from "react";
+import { getImageUrl } from "../../utils/imageAssets";
 
 const OrderSummaryItem = ({ item }) => {
   const itemTotal = item.price * item.quantity;
-  const thumbnailUrl = new URL(item.image.thumbnail, import.meta.url).href;
+  const thumbnailUrl = getImageUrl(item.image.thumbnail);
   return (
     <li className="flex items-center justify-between border-b border-(--color-rose-100) py-4">
       <div className="flex items-center gap-4">
